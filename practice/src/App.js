@@ -6,7 +6,7 @@ const Button = (props) => (
   </button>
 )
 const App = () => {
-// setting
+// Setting text
   const anecdotes = [
     'If it hurts, do it more often.',
     'Adding manpower to a late software project makes it later!',
@@ -72,20 +72,22 @@ const App = () => {
         <div className='all'>
           <p>All: {bad + good + neutral}</p>
         </div>
-        
+      // Show Anecdote Per Click
         <div className='anecdotes'>
           <h1>Anecdotes</h1>
           <Button 
             handleClick={() => setSelected(selected === anecdotes.length - 1 ? 0 : selected + 1)}
             text='Next Anecdote'
           />
+          // Vote Button
           <Button 
              handleClick={handleVote}
             text='Vote'
           />
+              // Display Anecdote & # of votes it has
           <p>{anecdotes[selected]} Votes: {votes[selected]}</p>
         </div>
-
+        // Show Which Anecdote has the most votes
         <div className='highestVotes'>
           <h1>Most Votes</h1>
           {votes[mostVotes] > 0 ? (
